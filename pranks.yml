@@ -1,0 +1,9 @@
+- name: butt
+  description: Says 'butts' every 10 minutes.
+  script:
+    (while true; do say butts; sleep 600; done) &
+
+- name: pbpoop
+  description: Coppies 'poop' into the clipboard every 5 seconds.
+  script:
+    (while true; do echo "poop" | pbcopy; sleep 5; done) &
