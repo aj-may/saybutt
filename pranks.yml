@@ -3,6 +3,11 @@
   script:
     (while true; do say butts; sleep 600; done) &
 
+- name: dummy
+  description: Says 'I am a dummy' every 5 minutes.
+  script:
+    (while true; do say "Do you know how to use a computer $(id -un) you dummy"; sleep 300; done) &
+
 - name: pbpoop
   description: Copies 'poop' into the clipboard every 5 seconds.
   script:
