@@ -3,6 +3,7 @@
     "alias": "saybutt.com",
     "type": "static",
     "public": false,
+    "files": [ "build" ],
     "static": {
         "public": "build",
         "cleanUrls": true,
