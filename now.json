@@ -1,0 +1,12 @@
+{
+    "name": "saybutt",
+    "alias": "saybutt.com",
+    "type": "static",
+    "public": false,
+    "static": {
+        "public": "build",
+        "cleanUrls": true,
+        "directoryListing": false,
+        "renderSingle": false
+    }
+}
