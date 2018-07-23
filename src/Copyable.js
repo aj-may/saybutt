@@ -35,8 +35,8 @@ class Prank extends Component {
         <Snackbar
           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
           open={this.state.showSnackbar}
-          onClose={this.handleClose.bind(this)}
-          message="Coppied to clipboard"
+          onClose={() => this.handleClose()}
+          message="Copied to clipboard"
         />
       </div>);
   }
