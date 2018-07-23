@@ -28,6 +28,7 @@ const Prank = ({ name, description }) => (
 
       <Copyable>{`curl -L ${getBaseUrl()}/${name} | sh`}</Copyable>
     </CardContent>
+    {/*
     <CardActions>
       <Button color="primary">
         View
@@ -36,6 +37,7 @@ const Prank = ({ name, description }) => (
         Share
       </Button>
     </CardActions>
+    */}
   </Card>);
 
 export default Prank;
