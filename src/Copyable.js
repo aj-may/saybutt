@@ -23,7 +23,7 @@ class Prank extends Component {
     const {children} = this.props;
 
     return (
-      <div style={{ backgroundColor: '#ddd', margin: '1rem 0 0', position: 'relative', height: '48px', borderRadius: '10px 24px 24px 10px' }}>
+      <div style={{ backgroundColor: '#ddd', margin: '1rem 0 0', position: 'relative', height: '48px', borderRadius: '5px 24px 24px 5px' }}>
         <IconButton aria-label="copy" style={{ position: 'absolute', top: '0', right: '0' }} onClick={() => this.handleClick(children)}>
           <Icon>file_copy</Icon>
         </IconButton>
