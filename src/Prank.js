@@ -11,9 +11,9 @@ const titleCase = value =>
     value.substring(0,1).toUpperCase() + value.substring(1) : value;
 
 const getBaseUrl = () => {
-  const { protocol, hostname, port } = window.location;
+  const { hostname, port } = window.location;
   return !port || port === 80 || port === 443 ?
-    `${protocol}//${hostname}` : `${protocol}//${hostname}:${port}`;
+    `${hostname}` : `${hostname}:${port}`;
 }
 
 const Prank = ({ name, description }) => (
@@ -26,7 +26,7 @@ const Prank = ({ name, description }) => (
         {description}
       </Typography>
 
-      <Copyable>{`curl ${getBaseUrl()}/${name} | sh`}</Copyable>
+      <Copyable>{`curl -L ${getBaseUrl()}/${name} | sh`}</Copyable>
     </CardContent>
     <CardActions>
       <Button color="primary">
