@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
 import Snackbar from '@material-ui/core/Snackbar';
+import { withStyles } from '@material-ui/core/styles';
 import copy from 'clipboard-copy';
 
 class Prank extends Component {
@@ -20,15 +21,15 @@ class Prank extends Component {
   }
 
   render() {
-    const {children} = this.props;
+    const { children, classes } = this.props;
 
     return (
-      <div style={{ backgroundColor: '#ddd', margin: '1rem 0 0', position: 'relative', height: '48px', borderRadius: '5px 24px 24px 5px' }}>
+      <div className={classes.root}>
         <IconButton aria-label="copy" style={{ position: 'absolute', top: '0', right: '0' }} onClick={() => this.handleClick(children)}>
           <Icon>file_copy</Icon>
         </IconButton>
 
-        <code style={{ position: 'absolute', top: '50%', left: '1rem', fontSize: '1rem', marginTop: '-.5rem', color: '#333' }}>
+        <code className={classes.code}>
           {children}
         </code>
 
@@ -42,4 +43,27 @@ class Prank extends Component {
   }
 }
 
-export default Prank;
+const styles = () => ({
+  root: {
+    backgroundColor: '#ddd',
+    margin: '1rem 0 0',
+    position: 'relative',
+    height: '48px',
+    borderRadius: '5px 24px 24px 5px',
+  },
+  button: {
+    position: 'absolute',
+    top: '0',
+    right: '0',
+  },
+  code: {
+    position: 'absolute',
+    top: '50%',
+    left: '1rem',
+    fontSize: '1rem',
+    marginTop: '-.5rem',
+    color: '#333',
+  },
+});
+
+export default withStyles(styles)(Prank);
