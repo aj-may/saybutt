@@ -1,11 +1,31 @@
 {
-    "name": "saybutt",
-    "alias": "saybutt.com",
-    "type": "static",
-    "public": false,
-    "static": {
-        "cleanUrls": true,
-        "directoryListing": false,
-        "renderSingle": false
-    }
+  "name": "saybutt",
+  "alias": "saybutt.com",
+  "type": "static",
+  "public": false,
+  "static": {
+    "cleanUrls": true,
+    "directoryListing": false,
+    "renderSingle": false,
+    "headers": [
+      {
+        "source": "static\/**\/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "service-worker.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=2592000"
+          }
+        ]
+      }
+    ]
+  }
 }
