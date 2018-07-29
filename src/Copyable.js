@@ -25,7 +25,7 @@ class Prank extends Component {
 
     return (
       <div className={classes.root}>
-        <IconButton aria-label="copy" style={{ position: 'absolute', top: '0', right: '0' }} onClick={() => this.handleClick(children)}>
+        <IconButton aria-label="copy" className={classes.button} onClick={() => this.handleClick(children)}>
           <Icon>file_copy</Icon>
         </IconButton>
 
