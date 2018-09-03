@@ -24,7 +24,7 @@ const Prank = ({ name, description }) => (
         {description}
       </Typography>
 
-      <Copyable>{`curl -L ${getBaseUrl()}/${name} | sh`}</Copyable>
+      <Copyable slug={name}>{`curl -L ${getBaseUrl()}/${name} | sh`}</Copyable>
     </CardContent>
   </Card>);
 
