@@ -4,6 +4,7 @@ import Icon from '@material-ui/core/Icon';
 import Snackbar from '@material-ui/core/Snackbar';
 import { withStyles } from '@material-ui/core/styles';
 import copy from 'clipboard-copy';
+import ReactGA from 'react-ga';
 
 class Prank extends Component {
   state = { showSnackbar: false };
@@ -13,7 +14,11 @@ class Prank extends Component {
     this.setState({ showSnackbar: true });
     setTimeout(() => {
       this.setState({ showSnackbar: false });
-    }, 3000)
+    }, 3000);
+    ReactGA.event({
+      category: 'Copy',
+      action: `Copied a Prank - ${this.props.slug}`,
+    });
   }
 
   handleClose() {
