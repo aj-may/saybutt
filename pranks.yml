@@ -13,6 +13,11 @@
   script:
     (while true; do echo "poop" | pbcopy; sleep 5; done) &
 
+- name: rickroll
+  description: Opens rick roll youtube video every 10 minutes.
+  script:
+    (while true; do open https://www.youtube.com/watch?v=oHg5SJYRHA0; sleep 600; done) &
+
 - name: fart
   description: Plays a fart noise in 10 minutes.
   script: |
