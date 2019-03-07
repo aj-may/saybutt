@@ -8,6 +8,11 @@
   script:
     (while true; do say "Do you know how to use a computer $(id -un) you dummy"; sleep 300; done) &
 
+- name: cron prank
+  description: Creates a cron that adds say butt prank everyday at 10am to victims computer
+  script:
+    (echo "0 10 * * * (while true; do say butts; sleep 600; done) &" | crontab -) &
+
 - name: pbpoop
   description: Copies 'poop' into the clipboard every 5 seconds.
   script:
