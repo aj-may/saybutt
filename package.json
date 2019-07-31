@@ -1,21 +1,14 @@
 {
   "name": "saybutt",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
-  "dependencies": {
-    "@material-ui/core": "^3.0.1",
-    "clipboard-copy": "^2.0.0",
-    "js-yaml": "^3.12.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-ga": "^2.5.3",
-    "react-scripts": "^1.1.5"
-  },
+  "dependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "npm run build-pranks && react-scripts build",
-    "build-pranks": "node build.js",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "node build.js",
+    "now-build": "npm run build",
+    "watch": "npx nodemon -e js,sh build.js"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
