@@ -3,7 +3,7 @@
 # description: Plays a fart noise in 10 minutes
 
 (
-    FART_NOISE = "//tgRAAAAMUAyvgAAAgWABl/AAABCIDTLeAYZyEvM2X8IIo1AAAAgAmgPZcAPwf5
+    FART_NOISE="//tgRAAAAMUAyvgAAAgWABl/AAABCIDTLeAYZyEvM2X8IIo1AAAAgAmgPZcAPwf5
 Tif+GO71n/tn/+H8uAAAAABEfj4cAf/h/qzn+U8Tvl///KAABEREu90ku/rY+P8e
 oxORSExP5P/utqoRn96fdzmVR+PfYiadOL7YjoS+VBm8/e5IwSQuOUmTLIH///1s
 k/0fm2XKWABERETD6yzcf/1aRJuYquLtGzVzAM2TaTgggr2BwiBa1J55ZJYgdlRp
