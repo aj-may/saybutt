@@ -48,7 +48,7 @@ const renderPrank = ({ name, author, description, slug }) => {
 
     <div class="copy">
       <pre>curl -L saybutt.com/${slug} | sh</pre>
-      <button onclick="copy(this)">copy</button>
+      <button onclick="copy('${slug}', this)">copy</button>
     </div>
   </article>`;
 };
@@ -136,7 +136,7 @@ const index = `<html>
     </main>
 
     <script>
-      function copy(button) {
+      function copy(slug, button) {
         const selection = window.getSelection();
         if (selection.rangeCount > 0) selection.removeAllRanges();
 
@@ -145,6 +145,8 @@ const index = `<html>
         selection.addRange(range);
 
         document.execCommand('copy');
+
+        gtag('event', 'copy', { slug });
       }
     </script>
   </body>
