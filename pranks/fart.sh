@@ -1,9 +1,10 @@
 # name: Fart
 # author: A.J. May (https://github.com/aj-may/)
-# description: Plays a fart noise in 10 minutes
+# description: Fart on demand with cURL
 
-(
-    FART_NOISE="//tgRAAAAMUAyvgAAAgWABl/AAABCIDTLeAYZyEvM2X8IIo1AAAAgAmgPZcAPwf5
+echo "curl http://$(ifconfig en0 | awk '{if($1 == "inet"){print $2}}'):1234"
+
+echo "//tgRAAAAMUAyvgAAAgWABl/AAABCIDTLeAYZyEvM2X8IIo1AAAAgAmgPZcAPwf5
 Tif+GO71n/tn/+H8uAAAAABEfj4cAf/h/qzn+U8Tvl///KAABEREu90ku/rY+P8e
 oxORSExP5P/utqoRn96fdzmVR+PfYiadOL7YjoS+VBm8/e5IwSQuOUmTLIH///1s
 k/0fm2XKWABERETD6yzcf/1aRJuYquLtGzVzAM2TaTgggr2BwiBa1J55ZJYgdlRp
@@ -680,11 +681,10 @@ AAgAAA0gAAABAAABpAAAACAAADSAAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
 VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/+xBk
 /4/wAABpAAAACAAADSAAAAEAAAGkAAAAIAAANIAAAARVVVVVVVVVVVVVVVVVVVVV
 VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
-VVVVVQ=="
+VVVVVQ==" | openssl enc -base64 -d > /tmp/fart.mp3
 
-    sleep 600
-    echo $FART_NOISE | openssl enc -base64 -d > /tmp/x.mp3
+(while true; do
+    echo 'HTTP/1.1 200 OK\n\n' | nc -l 0.0.0.0 1234 &> /dev/null;
     osascript -e "set Volume 7"
-    afplay /tmp/x.mp3
-    rm /tmp/x.mp3
-) &
+    afplay /tmp/fart.mp3 &
+done) &
