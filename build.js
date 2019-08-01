@@ -68,7 +68,7 @@ h1 {
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1em;
 }
 
@@ -121,6 +121,7 @@ const index = `<html>
     </script>
 
     <title>&gt; saybutt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       ${styles}
     </style>
