@@ -1,14 +1,48 @@
 {
   "name": "saybutt",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
-  "dependencies": {},
   "scripts": {
-    "build": "node build.js",
-    "now-build": "npm run build",
-    "watch": "npx nodemon -e js,sh build.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "cod-scripts lint",
+    "commitlint": "cod-scripts commitlint",
+    "format": "cod-scripts format",
+    "validate": "cod-scripts validate"
   },
-  "engines": {
-    "node": ">=10.0.0"
+  "dependencies": {
+    "@material-ui/core": "^4.10.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.53",
+    "copy-to-clipboard": "^3.3.1",
+    "firebase": "^7.14.5",
+    "highlight.js": "^10.0.3",
+    "mixpanel-browser": "^2.36.0",
+    "next": "^9.4.2",
+    "notistack": "^0.9.16",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-hook-form": "^5.7.2",
+    "swr": "^0.2.2"
+  },
+  "devDependencies": {
+    "cod-scripts": "^4.0.3",
+    "eslint-plugin-promise": "^4.2.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/cod-scripts/eslint.js"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "cod-scripts pre-commit",
+      "commit-msg": "cod-scripts commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
