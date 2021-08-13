@@ -19,7 +19,7 @@
     "firebase": "^7.14.5",
     "highlight.js": "^10.0.3",
     "mixpanel-browser": "^2.36.0",
-    "next": "^9.4.2",
+    "next": "^11.1.0",
     "notistack": "^0.9.16",
     "react": "16.13.1",
     "react-dom": "16.13.1",
